@@ -39,4 +39,5 @@ Both microservices (M1 & M2) implement the following core functions:
    ```bash
    git clone git@github.com:rivera-davidkyle/ping-pong-ms.git
    cd ping-pong-ms
+   docker compose up
    ```
