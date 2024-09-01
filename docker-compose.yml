@@ -6,3 +6,36 @@ services:
     ports:
       - "5672:5672" # RabbitMQ default port
       - "15672:15672" # RabbitMQ management console
+    networks:
+      - app-network
+
+  microservice1:
+    build:
+      context: ./m1-spring-boot # Path to your Spring Boot application
+      dockerfile: Dockerfile # Dockerfile to build the application
+    ports:
+      - "8080:8080" # Expose Spring Boot application on port 8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev # Set active profile if needed
+    depends_on:
+      - rabbitmq
+    networks:
+      - app-network
+
+  microservice2:
+    build:
+      context: ./m2-kotlin # Path to your Spring Boot application
+      dockerfile: Dockerfile # Dockerfile to build the application
+    ports:
+      - "8081:8080" # Expose Spring Boot application on port 8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev # Set active profile if needed
+    depends_on:
+      - rabbitmq
+      - microservice1
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
