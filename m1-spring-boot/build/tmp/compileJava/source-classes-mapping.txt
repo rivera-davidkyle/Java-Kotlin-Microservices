@@ -1,4 +1,4 @@
-com/example/microservice1/config/RabbitMQConfig.java
- com.example.microservice1.config.RabbitMQConfig
 com/example/microservice1/MicroserviceApplication.java
  com.example.microservice1.MicroserviceApplication
+com/example/microservice1/config/RabbitMQConfig.java
+ com.example.microservice1.config.RabbitMQConfig

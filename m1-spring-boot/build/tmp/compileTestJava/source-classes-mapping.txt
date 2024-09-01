@@ -1,2 +1,2 @@
-com/microservice/MessageSenderTest.java
- com.microservice.MessageSenderTest
+com/example/microservice1/MicroserviceApplicationTests.java
+ com.example.microservice1.MicroserviceApplicationTests
